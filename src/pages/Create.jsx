@@ -19,7 +19,7 @@ function Create() {
         Blogslist.add({
             User:user,
             Title:title,
-            Body:body,
+            Body:body, 
         }).then((docRef)=>{
             toast.remove();
             toast.success("Successfully Post")
@@ -27,7 +27,7 @@ function Create() {
             setBody("");
             setTimeout(() => {
                 navigate("/");
-            }, 2000);
+            }, 1000);
         }).catch((error)=>{
             console.error("error :",error)
             toast.error("Problem loading your Post")
@@ -37,6 +37,7 @@ function Create() {
   return (
     <>
     <div className="createform">
+    <h2 className='editheading'>Create a Blog</h2><br/>
         <form onSubmit={(event)=>submit(event)}>
             <input type="text" placeholder='Your Name' value={user} onChange={(e)=>{setUser(e.target.value)}} required autoFocus autoComplete='off' autoCorrect='off' />
             <input type="text" placeholder='Enter Blog Title' value={title} onChange={(e)=>setTitle(e.target.value)} required  autoComplete='off' autoCorrect='off'/>

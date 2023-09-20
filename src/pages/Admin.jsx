@@ -3,7 +3,7 @@ import fb from '../firebase';
 const DB = fb.firestore();
 const Blogslist = DB.collection('public-blogs');
 import { Link } from 'react-router-dom';
-import toast from 'react-hot-toast';
+
 
 function BlogList() {
 
@@ -21,7 +21,11 @@ function BlogList() {
     },[])
 
     const DeleteBlog = (id)=>{
-        toast.error("Only Admin can delete the Blog")
+        Blogslist.doc(id).delete().then(()=>{
+            alert("Document succesfully deleted");
+        }).catch((err)=>{
+            console.error("Error removing the blog")
+        })
     }
 
   return (
