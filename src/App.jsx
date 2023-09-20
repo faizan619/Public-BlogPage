@@ -1,8 +1,22 @@
-import {} from 'react'
+import {} from 'react';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import Create from './pages/Create';
+import Header from './pages/Header';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div>App</div>
+    <>
+    <Toaster 
+      position='top-center'
+    />
+    <Router>
+    <Header/>
+      <Routes>
+        <Route path='/create' element={<Create/>}></Route>
+      </Routes>
+    </Router>
+    </>
   )
 }
 
