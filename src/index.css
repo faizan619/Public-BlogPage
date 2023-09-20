@@ -4,3 +4,68 @@
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+:root{
+  --primaryColor:#9862fe;
+  --backgroundColor:#1c1e29;
+  --assentColor:#fff;
+}
+.header{
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+  background-color: var(--primaryColor);
+  align-items: center;
+}
+.headertitle{
+  text-decoration: none;
+}
+.header h2{
+  color: var(--backgroundColor);
+  font-size: 2rem;
+}
+.header button{
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  text-transform: uppercase;
+  background-color: var(--backgroundColor);
+  color: var(--assentColor);
+}
+.createform{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--backgroundColor);
+  height: calc(100vh - 4rem);
+  justify-content: center;
+  align-items: center;
+  /* gap: 1rem; */
+}
+.createform form{
+  border-radius: .5rem;
+  box-shadow: 3px 3px 5px,-3px -3px 5px;
+  padding:3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  gap: 2rem;
+  justify-content: center;
+}
+.createform form input{
+  padding: 0rem .5rem;
+  height: 2rem;
+  width: 90%;
+}
+.createform form textarea{
+  width: 90%;
+  padding: .3rem .5rem;
+}
+.createform form button{
+  width: 90%;
+  font-weight: bold;
+  padding: .3rem;
+  background-color: var(--primaryColor);
+  color: var(--assentColor);
+  border-color: var(--assentColor);
+  border-radius: .3rem;
+}
