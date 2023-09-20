@@ -9,6 +9,9 @@
   --backgroundColor:#1c1e29;
   --assentColor:#fff;
 }
+.invisible{
+  display: none;
+}
 
 /*----------------------------------------------------------------------------------------
 
@@ -51,6 +54,9 @@ Create Blog Part Here ..
   height: calc(100vh - 4rem);
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  max-height: 100%;
+  text-align: center;
   /* gap: 1rem; */
 }
 .createform form{
@@ -119,7 +125,8 @@ View Blog Part Here ..
 .viewBlog button:hover{
   border-color: white;
 }
-.viewBlog button, .linkbtn{
+.viewBlog button{
+  margin: .5rem;
   transition: all ease .3s;
   padding: 0rem 1rem;
   text-decoration: none;
@@ -154,7 +161,8 @@ Per Blog Part Here ..
 ----------------------------------------------------------------------------------------*/
 
 .perblog{
-  height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4rem);
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,3 +202,74 @@ Edit Blog Part Here ..
 
 ----------------------------------------------------------------------------------------*/
 
+.editheading{
+  color: var(--primaryColor);
+}
+
+
+@media (max-width:310px) {
+ .editheading{
+  font-size: 1.3rem;
+ } 
+ .header{
+  padding: .5rem;
+ }
+ .headertitle h2{
+  font-size: 1.3rem;
+ }
+ .header button{
+  padding: .3rem;
+ }
+ .perblog .perbloguser{
+  font-size: 1.3rem;
+}
+.perblogtitle{
+  font-size: 1rem;
+}
+}
+
+@media (max-width:250px) {
+  
+  .perblog .perblogbody{
+    font-size: 1rem;
+  }
+  .viewBlog{
+    padding: .1rem;
+  }
+  .viewBlog .userBlog{
+    padding: .5rem;
+  }
+  .userBlog{
+    padding: .5rem;
+  }
+  .blogtitle{
+    font-size: 1rem;
+  }
+  .viewBlog button{
+    width: 6rem;
+  }
+}
+
+@media (max-width:170px) {
+  .viewBlog{
+    display: none;
+  }
+  .invisible{
+    display: block;
+    background-color: var(--backgroundColor);
+    color: var(--assentColor);
+    height: calc(100vh - 4rem);
+  }
+  .createform{
+    display: none;
+  }
+  .header .headertitle{
+    font-size: .5rem;
+  }
+  .header button{
+    display: none;
+  }
+  .perblog{
+    display: none;
+  }
+}
