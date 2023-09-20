@@ -9,6 +9,12 @@
   --backgroundColor:#1c1e29;
   --assentColor:#fff;
 }
+
+/*----------------------------------------------------------------------------------------
+
+Header Part Here ..
+
+----------------------------------------------------------------------------------------*/
 .header{
   height: 4rem;
   display: flex;
@@ -31,6 +37,13 @@
   background-color: var(--backgroundColor);
   color: var(--assentColor);
 }
+
+
+/*----------------------------------------------------------------------------------------
+
+Create Blog Part Here ..
+
+----------------------------------------------------------------------------------------*/
 .createform{
   display: flex;
   flex-direction: column;
@@ -69,3 +82,115 @@
   border-color: var(--assentColor);
   border-radius: .3rem;
 }
+
+
+/*----------------------------------------------------------------------------------------
+
+View Blog Part Here ..
+
+----------------------------------------------------------------------------------------*/
+.viewBlog{
+  padding: .5rem 1rem;
+  min-height: calc(100vh - 4rem);
+  max-height: 100%;
+  background-color: var(--backgroundColor);
+  color: var(--assentColor);
+}
+.viewBlog .userBlog{
+  border: 1px solid;
+  padding: 1rem ;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: all ease .5s;
+  margin: 2rem 1rem;
+}
+.viewBlog .userBlog:hover{
+  scale: 1.01;
+  box-shadow: 1px 1px 5px ;
+}
+.btngrp{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.viewBlog button:hover{
+  border-color: white;
+}
+.viewBlog button, .linkbtn{
+  transition: all ease .3s;
+  padding: 0rem 1rem;
+  text-decoration: none;
+  height: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: .3rem;
+  background-color: var(--primaryColor);
+  color: var(--assentColor);
+}
+.bloguser{
+  color: darkgray;
+  text-transform: capitalize;
+}
+.blogtitle{
+  font-weight: bold;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.blogbody{
+text-transform: capitalize;
+overflow: hidden;
+text-overflow: ellipsis;
+width: 100%;
+white-space: nowrap;
+}
+
+/*----------------------------------------------------------------------------------------
+
+Per Blog Part Here ..
+
+----------------------------------------------------------------------------------------*/
+
+.perblog{
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--backgroundColor);
+  color: var(--assentColor);
+}
+.perblog .perbloguser{
+  font-size: 4rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-decoration: underline dotted;
+  color: var(--primaryColor);
+}
+.blogcontent{
+  border: 1px solid;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+.perblog .perblogtitle{
+  color: var(--primaryColor);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-style: italic;
+}
+.perblog .perblogbody{
+  text-transform: capitalize;
+  text-align: left;
+  line-height: 2rem;
+  font-size: 1.3rem;
+  word-spacing: .5rem;
+}
+/*----------------------------------------------------------------------------------------
+
+Edit Blog Part Here ..
+
+----------------------------------------------------------------------------------------*/
+
