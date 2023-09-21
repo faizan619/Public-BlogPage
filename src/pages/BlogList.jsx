@@ -22,7 +22,7 @@ function BlogList() {
     },[])
 
     const DeleteBlog = (id)=>{
-        toast.error("Only Admin can delete the Blog")
+        toast.error("Only Admin can delete the Blog") 
     }
 
   return (
