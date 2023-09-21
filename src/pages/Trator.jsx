@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Trator() {
 
-  const aneeza = "faizan";
+  const aneeza = "faizanalamsajjadalammoinuddinshaikhchamanali";
 
   const navigate = useNavigate();
   
