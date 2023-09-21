@@ -4,6 +4,7 @@ const DB = fb.firestore();
 const Blogslist = DB.collection('public-blogs');
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import Administrator from './administrator';
 
 function BlogList() {
 
@@ -27,6 +28,7 @@ function BlogList() {
   return (
     <>
         <div className='viewBlog'>
+
             {
                 blogs.map(blog =>{
                     return <div className='userBlog' key={blog.id}>
@@ -41,6 +43,7 @@ function BlogList() {
                     </div>
                 })
             }
+        <Administrator/>
         </div>
     </>
   )
