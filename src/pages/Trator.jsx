@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function Administrator() {
+function Trator() {
 
   const aneeza = "faizan";
 
@@ -32,4 +32,4 @@ function Administrator() {
   )
 }
 
-export default Administrator
+export default Trator;
