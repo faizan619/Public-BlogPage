@@ -277,3 +277,9 @@ Edit Blog Part Here ..
 .footer{
   text-align: center;
 }
+.likedislike{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
