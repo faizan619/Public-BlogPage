@@ -23,15 +23,16 @@ function BlogList() {
             }));
             setBlogs(data);
         })
-        blogs.forEach(blog => {
-            const displayValue = localStorage.getItem(`likebtn-${blog.id}`);
-            if (displayValue) {
-                document.getElementById(`likebtn-${blog.id}`).style.display = displayValue;
-            }
-        });
         return unsubscribe;
-    },[blogs])
-
+    },[])
+    
+    blogs.forEach(blog => {
+        const displayValue = localStorage.getItem(`likebtn-${blog.id}`);
+        if (displayValue) {
+            document.getElementById(`likebtn-${blog.id}`).style.display = displayValue;
+        }
+    });
+    
     const DeleteBlog = (id)=>{
         toast.error("Only Admin can delete the Blog") 
     }
@@ -45,7 +46,8 @@ function BlogList() {
     const handleDislike = async (blogId)=>{
         const blogRef = doc(DB, 'public-blogs', blogId);
         await updateDoc(blogRef,{dislikes:increment(1)});
-        
+        document.getElementById(`dislikebtn-${blogId}`).style.display = "none";
+        localStorage.setItem(`dislikebtn-${blogId}`, "none"); 
     }
 
   return (
@@ -67,9 +69,12 @@ function BlogList() {
                          <div className="likebtn">
                             <button id={`likebtn-${blog.id}`} onClick={()=> handleLike(blog.id)}>Like</button>  <span>{blog.likes} 👍</span>
                         </div>
-                        <div>
-                            <button className="dislikebtn" onClick={()=> handleDislike(blog.id)}>Dislike  <span>{blog.dislikes} 👎</span></button>
+                         <div className="dislikebtn">
+                            <button id={`dislikebtn-${blog.id}`} onClick={()=> handleDislike(blog.id)}>Dislike</button>  <span>{blog.dislikes} 👎</span>
                         </div>
+                        {/* <div>
+                            <button className="dislikebtn" onClick={()=> handleDislike(blog.id)}>Dislike  <span>{blog.dislikes} </span></button>
+                        </div> */}
                         </div>
                         
                         
