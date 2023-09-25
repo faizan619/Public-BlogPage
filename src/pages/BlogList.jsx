@@ -1,5 +1,5 @@
-import {useState,useEffect} from 'react'
-import {updateDoc, doc, increment, getDoc} from 'firebase/firestore'
+import {useState,useEffect,useCallback} from 'react'
+import {updateDoc, doc, increment} from 'firebase/firestore'
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import fb from '../firebase';
@@ -13,6 +13,15 @@ function BlogList() {
 
     const [blogs,setBlogs] = useState([]);
 
+    const handleBlogStyle = useCallback(()=>{
+        blogs.forEach(blog => {
+            const displayValue = localStorage.getItem(`likebtn-${blog.id}`);
+            if (displayValue) {
+                document.getElementById(`likebtn-${blog.id}`).style.display = displayValue;
+            }
+        });
+    },[blogs]);
+
     useEffect(()=>{
         const unsubscribe = Blogslist.limit(100).onSnapshot(querySnapshot =>{
             const data = querySnapshot.docs.map(doc =>({
@@ -24,14 +33,12 @@ function BlogList() {
             setBlogs(data);
         })
         return unsubscribe;
-    },[])
+    },[]);
+
+    useEffect(()=>{
+        handleBlogStyle();
+    },[handleBlogStyle])
     
-    blogs.forEach(blog => {
-        const displayValue = localStorage.getItem(`likebtn-${blog.id}`);
-        if (displayValue) {
-            document.getElementById(`likebtn-${blog.id}`).style.display = displayValue;
-        }
-    });
     
     const DeleteBlog = (id)=>{
         toast.error("Only Admin can delete the Blog") 
